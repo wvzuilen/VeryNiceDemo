@@ -1,7 +1,7 @@
 Class {
 	#name : #BaselineOfVeryNiceDemo,
 	#superclass : #BaselineOf,
-	#category : #VeryNiceDemo
+	#category : #BaselineOfVeryNiceDemo
 }
 
 { #category : #baselines }
