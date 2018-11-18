@@ -11,3 +11,9 @@ VeryNiceDemo >> renderContentOn: html [
 	html paragraph: 'Platform name: ' , OSPlatform currentPlatformName.
 	html paragraph: 'Platform version: ' , OSPlatform currentVersion.
 ]
+
+{ #category : #updating }
+VeryNiceDemo >> updateRoot: anHtmlRoot [
+    super updateRoot: anHtmlRoot.
+	anHtmlRoot title: 'Very nice demo!'
+]
