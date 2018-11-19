@@ -19,7 +19,15 @@ VeryNiceDemo >> renderContentOn: html [
 	html paragraph: 'Time:   ' , Time now print24.
 	html paragraph: 'Platform name: ' , OSPlatform currentPlatformName.
 	html paragraph: 'Platform version: ' , OSPlatform currentVersion.
-	html paragraph: 'Server port: ' , (request headers at: 'X-Forwarded-Port' ifAbsent: [ '' ]).
+	html unorderedList: [ request headers keysAndValuesDo: [ :key :value | html listItem: key , ': ' , value ] ]
+]
+
+{ #category : #hooks }
+VeryNiceDemo >> style [
+
+^ '* {
+	font-size: 10px;
+}'
 ]
 
 { #category : #updating }
