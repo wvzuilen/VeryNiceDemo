@@ -1,5 +1,5 @@
 # use a node base image
-FROM wvzuilen/pharo
+FROM wvzuilen/pharo-seaside
 
 # set maintainer
 MAINTAINER Wouter van Zuilen (wvzuilen@gmail.com)

@@ -1,10 +1,5 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test'){
-            steps {
-                sh 'echo testing'
-            }
-        }
-    }
+node {
+    checkout scm
+    def customImage = docker.build("wvzuilen/verynicedemo")
+    customImage.push()
 }
