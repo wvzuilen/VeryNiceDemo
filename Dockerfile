@@ -5,8 +5,8 @@ FROM wvzuilen/pharo-seaside
 MAINTAINER Wouter van Zuilen (wvzuilen@gmail.com)
 LABEL description="Docker image with a VeryNiceDemo !"
 
-COPY /preload.st /pharo
-COPY /postload.st /pharo
+COPY /scripts/preload.st /pharo
+COPY /scripts/postload.st /pharo
 
 WORKDIR /pharo
 RUN ./pharo Pharo.image st preload.st --save --quit
