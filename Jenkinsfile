@@ -16,8 +16,6 @@ pipeline {
             steps {
                 echo 'Pushing to Docker Hub...'
                 sh 'docker push wvzuilen/verynicedemo:latest'
-                echo 'STOP & RUN the VeryNiceDemo containers'
-                sh 'ssh -o StrictHostKeyChecking=No -i $(AWS_KEY_PATH) $(AWS_HOST) /home/ubuntu/restart.sh'
             }
         }
         stage('Restart') {
