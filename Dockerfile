@@ -3,6 +3,7 @@ FROM wvzuilen/pharo-seaside
 
 # set maintainer
 MAINTAINER Wouter van Zuilen (wvzuilen@gmail.com)
+LABEL description="Docker image with a VeryNiceDemo !"
 
 COPY /preload.st /pharo
 COPY /postload.st /pharo
