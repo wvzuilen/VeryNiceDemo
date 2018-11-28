@@ -21,7 +21,7 @@ pipeline {
         stage('Restart') {
             steps {
                 echo 'Restarting VeryNiceDemo containers...'
-                sh 'ssh -o StrictHostKeyChecking=No -i $(AWS_KEY_PATH) $(AWS_HOST) /home/ubuntu/restart.sh'
+                sh 'ssh -o StrictHostKeyChecking=No -i $AWS_KEY_PATH $AWS_HOST /home/ubuntu/restart.sh'
             }
         }
     }
