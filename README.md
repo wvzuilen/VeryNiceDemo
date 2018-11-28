@@ -4,3 +4,6 @@ For the sake of learning I made a Jenkins pipeline which builds a Pharo Docker i
 
 * https://hub.docker.com/r/wvzuilen/pharo/
 * https://hub.docker.com/r/wvzuilen/verynicedemo/
+
+To do's:
+* Add ENV for the ports
