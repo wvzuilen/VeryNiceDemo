@@ -14,7 +14,9 @@ RUN ./pharo Pharo.image st postload.st --save --quit
 
 # NGINX test
 RUN apt install nginx --yes
-RUN apt install nano --yes
+COPY ./nginx.conf /etc/nginx
+RUN service nginx start
+COPY /static /pharp/static
 
 CMD ["/pharo/pharo", "Pharo.image","--no-quit"]
 
