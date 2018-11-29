@@ -1,11 +1,22 @@
+"
+I'm a Very Nice Demo !
+"
 Class {
 	#name : #VeryNiceDemo,
 	#superclass : #WAComponent,
 	#instVars : [
 		'request'
 	],
+	#classInstVars : [
+		'cssUrl'
+	],
 	#category : #VeryNiceDemo
 }
+
+{ #category : #accessing }
+VeryNiceDemo class >> cssUrl [
+	^ cssUrl ifNil: [ 'static/ext.css' ]
+]
 
 { #category : #initialization }
 VeryNiceDemo >> initialize [
@@ -32,6 +43,7 @@ VeryNiceDemo >> style [
 
 { #category : #updating }
 VeryNiceDemo >> updateRoot: anHtmlRoot [
-    super updateRoot: anHtmlRoot.
-	anHtmlRoot title: 'Very nice demo!'
+	super updateRoot: anHtmlRoot.
+	anHtmlRoot title: 'Very nice demo!'.
+	anHtmlRoot stylesheet url: self class cssUrl
 ]
