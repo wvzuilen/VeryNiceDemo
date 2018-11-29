@@ -14,9 +14,11 @@ RUN ./pharo Pharo.image st postload.st --save --quit
 
 # NGINX test
 RUN apt install nginx --yes
-COPY ./nginx.conf /etc/nginx
 RUN service nginx start
-COPY /static /pharp/static
+COPY ./nginx.conf /etc/nginx
+RUN service nginx restart
+RUN mkdir /pharo/static
+COPY /static /pharo/static
 
 CMD ["/pharo/pharo", "Pharo.image","--no-quit"]
 
