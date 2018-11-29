@@ -12,7 +12,11 @@ WORKDIR /pharo
 RUN ./pharo Pharo.image st preload.st --save --quit
 RUN ./pharo Pharo.image st postload.st --save --quit
 
+# NGINX test
+RUN apt install nginx --yes
+RUN apt install nano --yes
+
 CMD ["/pharo/pharo", "Pharo.image","--no-quit"]
 
 # tell docker what port to expose
-EXPOSE 8080
+EXPOSE 8081
