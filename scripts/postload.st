@@ -1,4 +1,4 @@
-ZnZincServerAdaptor  startOn: 8088.
+ZnZincServerAdaptor  startOn: 8080.
 ZnZincServerAdaptor default server debugMode: true.
 ZnZincServerAdaptor default server logToTranscript.
 

@@ -15,4 +15,4 @@ RUN ./pharo Pharo.image st postload.st --save --quit
 CMD ["/pharo/pharo", "Pharo.image","--no-quit"]
 
 # tell docker what port to expose
-EXPOSE 8088
+EXPOSE 8080
