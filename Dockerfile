@@ -14,13 +14,12 @@ RUN ./pharo Pharo.image st postload.st --save --quit
 
 # NGINX test
 RUN apt install nginx --yes
-RUN service nginx start
 COPY ./nginx.conf /etc/nginx
-RUN service nginx restart
-RUN mkdir /pharo/static
 COPY /static /pharo/static
+COPY start.sh /pharo
+RUN chmod +x /pharo/start.sh
 
-CMD ["/pharo/pharo", "Pharo.image","--no-quit"]
+CMD ["/pharo/start.sh"]
 
 # tell docker what port to expose
 EXPOSE 8081
