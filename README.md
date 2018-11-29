@@ -7,3 +7,6 @@ For the sake of learning I made a Jenkins pipeline which builds a Pharo Docker i
 
 ### To do's:
 - [ ] Add ENV for the ports
+
+### Docker RUN command:
+`docker run -d --rm --name vnd -p 8081:8081 wvzuilen/verynicedemo:latest`
