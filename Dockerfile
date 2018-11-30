@@ -1,27 +1,28 @@
 # use a node base image
 FROM wvzuilen/pharo-seaside
 
-# set maintainer
+# Set meta data
 MAINTAINER Wouter van Zuilen (wvzuilen@gmail.com)
 LABEL description="Docker image with a VeryNiceDemo !"
 
-COPY /scripts/preload.st /pharo
-COPY /scripts/postload.st /pharo
-
+# Copy and install Smalltalk code
+COPY /resources/preload.st /pharo
+COPY /resources/postload.st /pharo
 WORKDIR /pharo
 RUN ./pharo Pharo.image st preload.st --save --quit
 RUN ./pharo Pharo.image st postload.st --save --quit
 
-# Installing NGINX
+# Install and config NGINX
 RUN apt install nginx --yes
-COPY ./nginx.conf /etc/nginx
+COPY ./resources/nginx.conf /etc/nginx
 
-
+# Copy static files used by the Very Nice Demo
 COPY /static /pharo/static
-COPY start.sh /pharo
-RUN chmod +x /pharo/start.sh
 
+# Copy container start script
+COPY /resources/start.sh /pharo
+RUN chmod +x /pharo/start.sh
 CMD ["/pharo/start.sh"]
 
-# tell docker what port to expose
+# Expose port 8081
 EXPOSE 8081
