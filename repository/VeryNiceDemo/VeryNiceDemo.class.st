@@ -15,7 +15,7 @@ Class {
 
 { #category : #accessing }
 VeryNiceDemo class >> cssUrl [
-	^ cssUrl ifNil: [ '/static/ext.css' ]
+	^ cssUrl ifNil: [ 'static/ext.css' ]
 ]
 
 { #category : #initialization }
