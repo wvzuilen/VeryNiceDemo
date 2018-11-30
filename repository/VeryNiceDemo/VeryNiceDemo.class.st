@@ -47,3 +47,9 @@ VeryNiceDemo >> updateRoot: anHtmlRoot [
 	anHtmlRoot title: 'Very nice demo!'.
 	anHtmlRoot stylesheet url: self class cssUrl
 ]
+
+{ #category : #updating }
+VeryNiceDemo >> updateUrl: anUrl [
+	super updateUrl: anUrl.
+	"anUrl addToPath: 'verynicedemo'"
+]
