@@ -51,5 +51,5 @@ VeryNiceDemo >> updateRoot: anHtmlRoot [
 { #category : #updating }
 VeryNiceDemo >> updateUrl: anUrl [
 	super updateUrl: anUrl.
-	anUrl addToPath: 'verynicedemo'
+	"anUrl addToPath: 'verynicedemo'"
 ]
