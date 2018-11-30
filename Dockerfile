@@ -1,4 +1,3 @@
-# use a node base image
 FROM wvzuilen/pharo-seaside
 
 # Set meta data
