@@ -15,7 +15,7 @@ Class {
 
 { #category : #accessing }
 VeryNiceDemo class >> cssUrl [
-	^ cssUrl ifNil: [ 'static/ext.css' ]
+	^ cssUrl ifNil: [ '/static/ext.css' ]
 ]
 
 { #category : #initialization }
@@ -38,6 +38,10 @@ VeryNiceDemo >> style [
 
 ^ '* {
 	font-size: 10px;
+}
+
+li {
+	color: red;
 }'
 ]
 
@@ -46,10 +50,4 @@ VeryNiceDemo >> updateRoot: anHtmlRoot [
 	super updateRoot: anHtmlRoot.
 	anHtmlRoot title: 'Very nice demo!'.
 	anHtmlRoot stylesheet url: self class cssUrl
-]
-
-{ #category : #updating }
-VeryNiceDemo >> updateUrl: anUrl [
-	super updateUrl: anUrl.
-	"anUrl addToPath: 'verynicedemo'"
 ]
