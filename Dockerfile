@@ -14,7 +14,7 @@ RUN ./pharo Pharo.image st postload.st --save --quit
 
 # Install and config NGINX
 RUN apt install nginx --yes
-COPY ./resources/nginx.conf /etc/nginx
+COPY /resources/nginx.conf /etc/nginx
 
 # Copy static files used by the Very Nice Demo
 COPY /static /pharo/static
