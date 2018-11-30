@@ -12,9 +12,11 @@ WORKDIR /pharo
 RUN ./pharo Pharo.image st preload.st --save --quit
 RUN ./pharo Pharo.image st postload.st --save --quit
 
-# NGINX test
+# Installing NGINX
 RUN apt install nginx --yes
 COPY ./nginx.conf /etc/nginx
+
+
 COPY /static /pharo/static
 COPY start.sh /pharo
 RUN chmod +x /pharo/start.sh
