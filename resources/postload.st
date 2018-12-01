@@ -1,6 +1,6 @@
 ZnZincServerAdaptor  startOn: 8080.
-ZnZincServerAdaptor default server debugMode: true.
-ZnZincServerAdaptor default server logToTranscript.
+"ZnZincServerAdaptor default server debugMode: true.
+ZnZincServerAdaptor default server logToTranscript."
 
 WAAdmin applicationDefaults
     removeParent: WADevelopmentConfiguration instance.
@@ -9,4 +9,4 @@ WADispatcher default handlers do: [ :each | WADispatcher default unregister: eac
 
 (WAAdmin register: VeryNiceDemo asApplicationAt: 'image').
     "preferenceAt: #serverPath put: '/'."
-"WAAdmin defaultDispatcher defaultName: 'image'."
+WAAdmin defaultDispatcher defaultName: 'image'.
