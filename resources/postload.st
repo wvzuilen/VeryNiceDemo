@@ -8,5 +8,5 @@ WAAdmin applicationDefaults
 WADispatcher default handlers do: [ :each | WADispatcher default unregister: each ].
 
 (WAAdmin register: VeryNiceDemo asApplicationAt: 'image')
-    preferenceAt: #serverPath put: '/'.
+    preferenceAt: #serverPath put: '/verynicedemo'.
 WAAdmin defaultDispatcher defaultName: 'image'.
