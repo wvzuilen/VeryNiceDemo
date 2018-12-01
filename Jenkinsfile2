@@ -1,0 +1,24 @@
+// Jenkinsfile without the AWS restart
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building without cache...'
+                sh 'docker login'
+                sh 'docker build --no-cache -t wvzuilen/verynicedemo:latest .'
+            }
+        }
+        stage('Push') {
+            steps {
+                echo 'Pushing to Docker Hub...'
+                sh 'docker push wvzuilen/verynicedemo:latest'
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
